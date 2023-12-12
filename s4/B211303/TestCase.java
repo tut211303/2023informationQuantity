@@ -56,7 +56,7 @@ public class TestCase {
 	    myObject.setSpace("".getBytes());
 	    myObject.setTarget("".getBytes());
 	    freq = myObject.frequency();
-	    assert freq == -1: " non bytes == -1"
+	    assert freq == -1: " non bytes == -1";
 	}
 	catch(Exception e) {
 	    System.out.println("Exception occurred in Frequencer Object");
