@@ -45,9 +45,9 @@ public class TestCase {
 	    freq = myObject.frequency();
 	    assert freq == 4: "Hi Ho Hi Ho, H: " + freq;
 	    // Write your testCase here
-myObject.setSpace("abc".getBytes());
-myObject.setTarget("abcd".getBytes());
-freq = myObject.frequency();
+	    myObject.setSpace("abc".getBytes());
+	    myObject.setTarget("abcd".getBytes());
+  	    freq = myObject.frequency();
 
 	/*    myObject = new Frequencer();
 	    freq = myObject.frequency();
@@ -66,7 +66,6 @@ freq = myObject.frequency();
 	    System.out.println("Exception occurred in Frequencer Object");
 	    success = false;
 	}
-/
 	try {
 	    InformationEstimatorInterface myObject;
 	    double value;
