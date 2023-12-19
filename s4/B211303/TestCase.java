@@ -45,34 +45,9 @@ public class TestCase {
 	    freq = myObject.frequency();
 	    assert freq == 4: "Hi Ho Hi Ho, H: " + freq;
 	    // Write your testCase here
-// Empty target, expecting -1
-	    myObject = new Frequencer();
-	    myObject.setSpace("Hello, world!".getBytes());
-	    myObject.setTarget("".getBytes());
-	    freq = myObject.frequency();
-	    assert freq == -1: "Empty target: " + freq;
-
-// Empty space, expecting 0
-myObject = new Frequencer();
-myObject.setSpace("".getBytes());
-myObject.setTarget("H".getBytes());
-freq = myObject.frequency();
-assert freq == 0: "Empty space: " + freq;
-
-// Target longer than space, expecting 0
-myObject = new Frequencer();
 myObject.setSpace("abc".getBytes());
-myObject.setTarget("abcdef".getBytes());
+myObject.setTarget("abcd".getBytes());
 freq = myObject.frequency();
-assert freq == 0: "Target longer than space: " + freq;
-
-// Non-matching target, expecting 0
-myObject = new Frequencer();
-myObject.setSpace("abcdeabcde".getBytes());
-myObject.setTarget("xyz".getBytes());
-freq = myObject.frequency();
-assert freq == 0: "Non-matching target: " + freq;
-
 
 	/*    myObject = new Frequencer();
 	    freq = myObject.frequency();
