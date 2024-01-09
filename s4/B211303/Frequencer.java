@@ -43,12 +43,13 @@ public class Frequencer implements FrequencerInterface {
         int targetLength = myTarget.length;
         int spaceLength = mySpace.length;
         int count = 0;
+	    // It return -1, when TARGET is not set or TARGET's length is zero
 	if (targetLength == 0){
 		return -1;
-	}
+	}// Otherwise, it return 0, when SPACE is not set or Space's length is zero
 	if (spaceLength == 0){
 		return 0;
-	}
+	}// Otherwise, get the frequency of TAGET in SPACE
 	if(debugMode) { showVariables(); }
         for(int start = 0; start<=spaceLength - targetLength; start++) {
             boolean abort = false;
@@ -63,7 +64,7 @@ public class Frequencer implements FrequencerInterface {
 
     // I know that here is a potential problem in the declaration.
     @Override
-    public int subByteFrequency(int start, int length) {
+    public int subByteFrequency(int start, int end) {
         int targetLength = myTarget.length;
         int spaceLength = mySpace.length;
         int count = 0;
@@ -76,8 +77,8 @@ public class Frequencer implements FrequencerInterface {
 	if(debugMode) { showVariables(); }
         for(int j = 0; j<spaceLength - targetLength; j++) {
             boolean abort = false;
-            for(int i = start; i<length; i++) {
-                if(myTarget[i] != mySpace[j+i]) { abort = true; break; }
+            for(int i = start; i<end; i++) {
+                if(myTarget[i] != mySpace[j+i - start]) { abort = true; break; }
             }
             if(abort == false) { count++; }
         }
