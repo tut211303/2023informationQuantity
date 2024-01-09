@@ -40,7 +40,7 @@ public class InformationEstimator implements InformationEstimatorInterface {
 
     // f: information quantity for a count, -log2(count/sizeof(space))
     double f(int freq) {
-	if(freq == 0 or mySpace.length == 0){
+	if(freq == 0 || mySpace.length == 0){
 		return 0.0;
 	}
         return  - Math.log10((double) freq / (double) mySpace.length)/ Math.log10((double) 2.0);
