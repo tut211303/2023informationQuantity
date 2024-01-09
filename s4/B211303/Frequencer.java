@@ -43,8 +43,14 @@ public class Frequencer implements FrequencerInterface {
         int targetLength = myTarget.length;
         int spaceLength = mySpace.length;
         int count = 0;
+	if (targetLength == 0){
+		return -1;
+	}
+	if (spaceLength == 0){
+		return 0;
+	}
 	if(debugMode) { showVariables(); }
-        for(int start = 0; start<spaceLength; start++) { // Is it OK?
+        for(int start = 0; start<=spaceLength - targetLength; start++) {
             boolean abort = false;
             for(int i = 0; i<targetLength; i++) {
                 if(myTarget[i] != mySpace[start+i]) { abort = true; break; }
@@ -58,8 +64,25 @@ public class Frequencer implements FrequencerInterface {
     // I know that here is a potential problem in the declaration.
     @Override
     public int subByteFrequency(int start, int length) {
-        // Not yet implemented, but it should be defined as specified.
-        return -1;
+        int targetLength = myTarget.length;
+        int spaceLength = mySpace.length;
+        int count = 0;
+	if (targetLength == 0 or ){
+		return -1;
+	}
+	if (spaceLength == 0){
+		return 0;
+	}
+	if(debugMode) { showVariables(); }
+        for(int j = 0; j<spaceLength - targetLength; j++) {
+            boolean abort = false;
+            for(int i = start; i<end; i++) {
+                if(myTarget[i] != mySpace[j+i]) { abort = true; break; }
+            }
+            if(abort == false) { count++; }
+        }
+	if(debugMode) { System.out.printf("%10d\n", count); }
+        return count;
     }
 
     public static void main(String[] args) {
