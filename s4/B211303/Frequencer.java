@@ -67,7 +67,7 @@ public class Frequencer implements FrequencerInterface {
         int targetLength = myTarget.length;
         int spaceLength = mySpace.length;
         int count = 0;
-	if (targetLength == 0 or ){
+	if (targetLength == 0){
 		return -1;
 	}
 	if (spaceLength == 0){
