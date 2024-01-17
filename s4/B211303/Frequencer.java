@@ -281,7 +281,7 @@ private int subByteEndIndex(int start, int end) {
         //       
 	int i;
 	for(i = 0;i < mySpace.length;i++){
-		if(targetCompare(suffixArray[i],start,end) == -1)
+		if(targetCompare(suffixArray[i],start,end) == 1)
 			return i;
 	}return 0; 
     }
