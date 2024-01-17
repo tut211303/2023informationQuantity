@@ -55,7 +55,7 @@ private int suffixCompare(int i, int j) {
         // if suffix_i > suffix_j, it returns 1   
         // if suffix_i < suffix_j, it returns -1  
         // if suffix_i = suffix_j, it returns 0;   
-	spaceLength = mySpace.length;
+	int spaceLength = mySpace.length;
         // ここにコードを記述せ
 	if(i == j)
 		return 0;
