@@ -246,7 +246,7 @@ private int subByteStartIndex(int start, int end) {
         // ここにコードを記述せよ。                                                 
         //                                      
 	int i;
-	for(i = 0;i < end - start;i++){
+	for(i = 0;i < mySpace.length;i++){
 		if(targetCompare(suffixArray[i],start,end) == 0)
 			return i;
 	}return 0; 
@@ -281,7 +281,7 @@ private int subByteEndIndex(int start, int end) {
         //　ここにコードを記述せよ                                           
         //       
 	int i;
-	for(i = 0;i < end - start;i++){
+	for(i = 0;i < mySpace.length;i++){
 		if(targetCompare(suffixArray[i],start,end) == -1)
 			return i;
 	}return 0; 
