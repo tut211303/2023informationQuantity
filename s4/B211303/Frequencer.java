@@ -21,6 +21,8 @@ public class Frequencer implements FrequencerInterface {
     static boolean debugMode = false;
     byte[] myTarget;
     byte[] mySpace;
+    boolean targetReady = false;
+    boolean spaceReady = false;
     int [] suffixArray;
     private void printSuffixArray() {
         if(spaceReady) {
