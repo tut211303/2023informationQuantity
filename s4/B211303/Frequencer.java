@@ -254,8 +254,12 @@ private int subByteStartIndex(int start, int end) {
         // if target_start_end is "Ho ", it will return 6.                
         //                                                                          
         // ここにコードを記述せよ。                                                 
-        //                                                                         
-        return suffixArray.length; //このコードは変更しなければならない。          
+        //                                      
+	int i;
+	for(i = 0;i < end - start;i++){
+		if(targetCompare(i,start,end) == 0)
+			return i;
+	}return 0; 
     }
 private int subByteEndIndex(int start, int end) {
         //suffix arrayのなかで、目的の文字列の出現しなくなる場所を求めるメソッド
@@ -285,8 +289,12 @@ private int subByteEndIndex(int start, int end) {
         // if target_start_end is"i", it will return 9 for "Hi Ho Hi Ho".    
         //                                                                   
         //　ここにコードを記述せよ                                           
-        //                                                                   
-        return suffixArray.length; // この行は変更しなければならない、       
+        //       
+	int i;
+	for(i = 0;i < end - start;i++){
+		if(targetCompare(i,start,end) == 0)
+			return i + 1;
+	}return 0; 
     }
     public static void main(String[] args) {
         Frequencer myObject;
@@ -294,6 +302,25 @@ private int subByteEndIndex(int start, int end) {
 	// White box test, here.
 	debugMode = true;
         try {
+		frequencerObject = new Frequencer();
+            frequencerObject.setSpace("ABC".getBytes());
+            frequencerObject.printSuffixArray();
+            frequencerObject = new Frequencer();
+            frequencerObject.setSpace("CBA".getBytes());
+            frequencerObject.printSuffixArray();
+            frequencerObject = new Frequencer();
+            frequencerObject.setSpace("HHH".getBytes());
+            frequencerObject.printSuffixArray();
+            frequencerObject = new Frequencer();
+            frequencerObject.setSpace("Hi Ho Hi Ho".getBytes());
+            frequencerObject.printSuffixArray();
+	    frequencerObject.setTarget("H".getBytes());
+            int a = frequencerObject.subByteEndIndex(0,0,1);
+            int b = frequencerObject.subByteStartIndex(0,0,1);
+            int result = frequencerObject.frequency();
+	    System.out.print(a + b);
+            System.out.print("Freq = "+ result+" ");
+            if(4 == result) { System.out.println("OK"); } else {System.out.println("WRONG"); }
             myObject = new Frequencer();
             myObject.setSpace("Hi Ho Hi Ho".getBytes());
             myObject.setTarget("H".getBytes());
