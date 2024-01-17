@@ -62,7 +62,7 @@ private int suffixCompare(int i, int j) {
 	else
 		spaceLength -= i;
 	int k,baf;
-	for(k = 0;k<spaceLength;k+){
+	for(k = 0;k<spaceLength;k++){
 		if(mySpace[i + k] < mySpace[j + k]){
 			return -1;		}
 		if(mySpace[i] > mySpace[j]){
@@ -219,7 +219,7 @@ public void setSpace(byte []space) {
 			return -1;
 		}
 		if(mySpace[i + x] > mySpace[j + x]){
-			return = 1;
+			return 1;
 		}}
 	if(mySpace.length - i < j - k)
 		return -1;
