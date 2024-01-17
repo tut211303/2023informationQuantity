@@ -199,7 +199,7 @@ public void setSpace(byte []space) {
         // ここに比較のコードを書け 
         
 	int x,baf;
-	if(mySpace.length - i <j - k)
+	if(mySpace.length - i <k - j)
 		baf = mySpace.length - i;
 	else
 		baf = j - k;
@@ -210,7 +210,7 @@ public void setSpace(byte []space) {
 		if(mySpace[i + x] > mySpace[j + x]){
 			return 1;
 		}}
-	if(mySpace.length - i < j - k)
+	if(mySpace.length - i < k - j)
 		return -1;
 	return 0;
 	}
