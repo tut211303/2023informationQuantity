@@ -286,7 +286,7 @@ private int subByteEndIndex(int start, int end) {
 	}return 0; 
     }
     public static void main(String[] args) {
-        Frequencer myObject;
+        Frequencer frequencerObject;
         int freq;
 	// White box test, here.
 	debugMode = true;
