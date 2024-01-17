@@ -139,24 +139,28 @@ public void setSpace(byte []space) {
     // I know that here is a potential problem in the declaration.
     @Override
     public int subByteFrequency(int start, int end) {
-	int count = 0;
-	    // It return -1, when TARGET is not set or TARGET's length is zero
-	if (targetReady == false){
-		return -1;
-	}// Otherwise, it return 0, when SPACE is not set or Space's length is zero
-	if (spaceReady == false){
-		return 0;
-	}// Otherwise, get the frequency of TAGET in SPACE
-	if(debugMode) { showVariables(); }
-        for(int j = 0; j<spaceLength - targetLength; j++) {
-            boolean abort = false;
-            for(int i = start; i<end; i++) {
-                if(myTarget[i] != mySpace[j+i - start]) { abort = true; break; }
+	// start, and end specify a string to search in myTarget,
+        // if myTarget is "ABCD", 
+        //     start=0, and end=1 means string "A".
+        //     start=1, and end=3 means string "BC".
+        // This method returns how many the string appears in my Space.
+        // 
+        /* This method should be work as follows, but much more efficient.
+           int spaceLength = mySpace.length;                      
+           int count = 0;                                        
+           for(int offset = 0; offset< spaceLength - (end - start); offset++) {
+            boolean abort = false; 
+            for(int i = 0; i< (end - start); i++) {
+             if(myTarget[start+i] != mySpace[offset+i]) { abort = true; break; }
             }
             if(abort == false) { count++; }
-        }
-	if(debugMode) { System.out.printf("%10d\n", count); }
-        return count;
+           }
+        */
+        // The following the counting method using suffix array.
+        // 演習の内容は、適切なsubByteStartIndexとsubByteEndIndexを定義することである。
+        int first = subByteStartIndex(start, end);
+        int last1 = subByteEndIndex(start, end);
+        return last1 - first;
     }
 	private int targetCompare(int i, int j, int k) {
         // subByteStartIndexとsubByteEndIndexを定義するときに使う比較関数。
@@ -300,10 +304,7 @@ private int subByteEndIndex(int start, int end) {
             frequencerObject.setSpace("Hi Ho Hi Ho".getBytes());
             frequencerObject.printSuffixArray();
 	    frequencerObject.setTarget("H".getBytes());
-            int a = frequencerObject.subByteEndIndex(0,0,1);
-            int b = frequencerObject.subByteStartIndex(0,0,1);
             int result = frequencerObject.frequency();
-	    System.out.print(a + b);
             System.out.print("Freq = "+ result+" ");
             if(4 == result) { System.out.println("OK"); } else {System.out.println("WRONG"); }
             myObject = new Frequencer();
