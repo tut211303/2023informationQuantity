@@ -76,7 +76,7 @@ private int suffixCompare(int i, int j) {
     }
     @Override
     public void setTarget(byte[] target) {
-        myTarget = target;
+        myTarget = target; if(myTarget.length>0) targetReady = true;
     }
     @Override
 public void setSpace(byte []space) { 
@@ -124,18 +124,12 @@ public void setSpace(byte []space) {
 
     @Override
     public int frequency() {
-	if(myTarget == null)
-		return 0;
-	if(mySpace == null)
-		return -1;
-        int targetLength = myTarget.length;
-        int spaceLength = mySpace.length;
         int count = 0;
 	    // It return -1, when TARGET is not set or TARGET's length is zero
-	if (targetLength == 0){
+	if (targetReady == False){
 		return -1;
 	}// Otherwise, it return 0, when SPACE is not set or Space's length is zero
-	if (spaceLength == 0){
+	if (spaceReady == False){
 		return 0;
 	}// Otherwise, get the frequency of TAGET in SPACE
 	if(debugMode) { showVariables(); }
