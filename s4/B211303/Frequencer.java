@@ -307,9 +307,6 @@ private int subByteEndIndex(int start, int end) {
             int result = frequencerObject.frequency();
             System.out.print("Freq = "+ result+" ");
             if(4 == result) { System.out.println("OK"); } else {System.out.println("WRONG"); }
-            myObject = new Frequencer();
-            myObject.setSpace("Hi Ho Hi Ho".getBytes());
-            myObject.setTarget("H".getBytes());
         }
         catch(Exception e) {
             System.out.println("Exception occurred: STOP");
