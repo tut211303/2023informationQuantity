@@ -284,7 +284,7 @@ private int subByteEndIndex(int start, int end) {
 	for(i = 0;i < mySpace.length;i++){
 		if(targetCompare(suffixArray[i],start,end) == 1)
 			return i;
-	}return mySpace.length - 1; 
+	}return mySpace.length; 
     }
     public static void main(String[] args) {
         Frequencer frequencerObject;
