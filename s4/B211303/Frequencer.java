@@ -282,8 +282,8 @@ private int subByteEndIndex(int start, int end) {
         //       
 	int i;
 	for(i = 0;i < end - start;i++){
-		if(targetCompare(suffixArray[i],start,end) == 0)
-			return i + 1;
+		if(targetCompare(suffixArray[i],start,end) == -1)
+			return i;
 	}return 0; 
     }
     public static void main(String[] args) {
