@@ -200,7 +200,7 @@ public void setSpace(byte []space) {
         
 	int x,baf;
 	if(mySpace.length - i <j - k)
-		baf = mySpaceLength - i;
+		baf = mySpace.length - i;
 	else
 		baf = j - k;
 	for(x = 0;x<baf;x++){
