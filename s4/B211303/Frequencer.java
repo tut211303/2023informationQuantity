@@ -160,7 +160,6 @@ public void setSpace(byte []space) {
         // 演習の内容は、適切なsubByteStartIndexとsubByteEndIndexを定義することである。
         int first = subByteStartIndex(start, end);
         int last1 = subByteEndIndex(start, end);
-	System.out.print("a" + first + "b" + last1);
         return last1 - first;
     }
 	private int targetCompare(int i, int j, int k) {
@@ -203,7 +202,7 @@ public void setSpace(byte []space) {
 	if(mySpace.length - i <k - j)
 		baf = mySpace.length - i;
 	else
-		baf = j - k;
+		baf = k - j;
 	for(x = 0;x<baf;x++){
 		if(mySpace[i + x] < mySpace[j + x]){
 			return -1;
