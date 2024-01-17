@@ -126,38 +126,27 @@ public void setSpace(byte []space) {
 
     @Override
     public int frequency() {
-        int count = 0;
 	    // It return -1, when TARGET is not set or TARGET's length is zero
-	if (targetReady == False){
+	if (targetReady == false){
 		return -1;
 	}// Otherwise, it return 0, when SPACE is not set or Space's length is zero
-	if (spaceReady == False){
+	if (spaceReady == false){
 		return 0;
 	}// Otherwise, get the frequency of TAGET in SPACE
-	if(debugMode) { showVariables(); }
-        for(int start = 0; start<=spaceLength - targetLength; start++) {
-            boolean abort = false;
-            for(int i = 0; i<targetLength; i++) {
-                if(myTarget[i] != mySpace[start+i]) { abort = true; break; }
-            }
-            if(abort == false) { count++; }
-        }
-	if(debugMode) { System.out.printf("%10d\n", count); }
-        return count;
+	return subByteFrequency(0, myTarget.length);
     }
 
     // I know that here is a potential problem in the declaration.
     @Override
     public int subByteFrequency(int start, int end) {
-        int targetLength = myTarget.length;
-        int spaceLength = mySpace.length;
-        int count = 0;
-	if (targetLength == 0){
+	int count = 0;
+	    // It return -1, when TARGET is not set or TARGET's length is zero
+	if (targetReady == false){
 		return -1;
-	}
-	if (spaceLength == 0){
+	}// Otherwise, it return 0, when SPACE is not set or Space's length is zero
+	if (spaceReady == false){
 		return 0;
-	}
+	}// Otherwise, get the frequency of TAGET in SPACE
 	if(debugMode) { showVariables(); }
         for(int j = 0; j<spaceLength - targetLength; j++) {
             boolean abort = false;
