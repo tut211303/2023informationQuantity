@@ -205,10 +205,10 @@ public void setSpace(byte []space) {
 	else
 		baf = k - j;
 	for(x = 0;x<baf;x++){
-		if(mySpace[i + x] < mySpace[j + x]){
+		if(mySpace[i + x] < myTarget[j + x]){
 			return -1;
 		}
-		if(mySpace[i + x] > mySpace[j + x]){
+		if(mySpace[i + x] > myTarget[j + x]){
 			return 1;
 		}}
 	if(mySpace.length - i < k - j)
