@@ -160,7 +160,7 @@ public void setSpace(byte []space) {
         // 演習の内容は、適切なsubByteStartIndexとsubByteEndIndexを定義することである。
         int first = subByteStartIndex(start, end);
         int last1 = subByteEndIndex(start, end);
-	System.out.print(first + last1);
+	System.out.print("a" + first + "b" + last1);
         return last1 - first;
     }
 	private int targetCompare(int i, int j, int k) {
