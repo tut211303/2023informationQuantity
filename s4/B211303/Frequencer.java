@@ -290,7 +290,9 @@ private int subByteEndIndex(int start, int end) {
         int freq;
 	// White box test, here.
 	debugMode = true;
-        try {
+        try {frequencerObject = new Frequencer();
+            frequencerObject.setSpace("3210321001230123".getBytes());
+            frequencerObject.printSuffixArray();
 		frequencerObject = new Frequencer();
             frequencerObject.setSpace("ABC".getBytes());
             frequencerObject.printSuffixArray();
