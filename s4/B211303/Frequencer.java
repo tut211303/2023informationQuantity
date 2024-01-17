@@ -160,6 +160,7 @@ public void setSpace(byte []space) {
         // 演習の内容は、適切なsubByteStartIndexとsubByteEndIndexを定義することである。
         int first = subByteStartIndex(start, end);
         int last1 = subByteEndIndex(start, end);
+	System.out.print("a" + first + "n" + last1);
         return last1 - first;
     }
 	private int targetCompare(int i, int j, int k) {
@@ -290,9 +291,7 @@ private int subByteEndIndex(int start, int end) {
         int freq;
 	// White box test, here.
 	debugMode = true;
-        try {frequencerObject = new Frequencer();
-            frequencerObject.setSpace("3210321001230123".getBytes());
-            frequencerObject.printSuffixArray();
+        try {
 		frequencerObject = new Frequencer();
             frequencerObject.setSpace("ABC".getBytes());
             frequencerObject.printSuffixArray();
@@ -301,6 +300,9 @@ private int subByteEndIndex(int start, int end) {
             frequencerObject.printSuffixArray();
             frequencerObject = new Frequencer();
             frequencerObject.setSpace("HHH".getBytes());
+            frequencerObject.printSuffixArray();
+	frequencerObject = new Frequencer();
+            frequencerObject.setSpace("3210321001230123".getBytes());
             frequencerObject.printSuffixArray();
             frequencerObject = new Frequencer();
             frequencerObject.setSpace("Hi Ho Hi Ho".getBytes());
