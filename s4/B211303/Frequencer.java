@@ -65,9 +65,9 @@ private int suffixCompare(int i, int j) {
 		spaceLength -= i;
 	int k,baf;
 	for(k = 0;k<spaceLength;k++){
-		if(mySpace[i + k] < mySpace[j + k]){
-			return -1;		}
-		if(mySpace[i] > mySpace[j]){
+		if(mySpace[i + k] < mySpace[j + k])
+			return -1;		
+		if(mySpace[i + k] > mySpace[j + k]){
 			return 1;
 			
 		}
@@ -246,7 +246,7 @@ private int subByteStartIndex(int start, int end) {
         //                                      
 	int i;
 	for(i = 0;i < end - start;i++){
-		if(targetCompare(i,start,end) == 0)
+		if(targetCompare(suffixArray[i],start,end) == 0)
 			return i;
 	}return 0; 
     }
@@ -281,7 +281,7 @@ private int subByteEndIndex(int start, int end) {
         //       
 	int i;
 	for(i = 0;i < end - start;i++){
-		if(targetCompare(i,start,end) == 0)
+		if(targetCompare(suffixArray[i],start,end) == 0)
 			return i + 1;
 	}return 0; 
     }
