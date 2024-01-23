@@ -280,7 +280,7 @@ private int subByteEndIndex(int start, int end) {
         //　ここにコードを記述せよ                                           
         //       
 	int i;
-	for(i = mySpace.length;i > -1;--i){
+	for(i = mySpace.length - 1;i >= 0;i--){
 		if(targetCompare(suffixArray[i],start,end) <= 0)
 			return i + 1;
 	}return 0; 
