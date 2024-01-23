@@ -246,9 +246,9 @@ private int subByteStartIndex(int start, int end) {
         //                                      
 	int i;
 	for(i = 0;i < mySpace.length;i++){
-		if(targetCompare(suffixArray[i],start,end) == 0)
+		if(targetCompare(suffixArray[i],start,end) >= 0)
 			return i;
-	}return 0; 
+	}return mySpace.length; 
     }
 private int subByteEndIndex(int start, int end) {
         //suffix arrayのなかで、目的の文字列の出現しなくなる場所を求めるメソッド
@@ -280,10 +280,10 @@ private int subByteEndIndex(int start, int end) {
         //　ここにコードを記述せよ                                           
         //       
 	int i;
-	for(i = 0;i < mySpace.length;i++){
-		if(targetCompare(suffixArray[i],start,end) == 1)
-			return i;
-	}return mySpace.length; 
+	for(i = mySpace.length;i > -1;--i){
+		if(targetCompare(suffixArray[i],start,end) <= 0)
+			return i + 1;
+	}return 0; 
     }
     public static void main(String[] args) {
         Frequencer frequencerObject;
