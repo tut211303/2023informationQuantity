@@ -42,9 +42,6 @@ public class InformationEstimator implements InformationEstimatorInterface {
 
     // f: information quantity for a count, -log2(count/sizeof(space))
     double f(int freq) {
-	if(freq == 0 || spaceReady == false){
-		return 0.0;
-	}
         return  - Math.log10((double) freq / (double) mySpace.length)/ Math.log10((double) 2.0);
     }
 
@@ -96,9 +93,10 @@ public class InformationEstimator implements InformationEstimatorInterface {
                 }
                 // System.out.print("("+start+","+end+")");
                 myFrequencer.setTarget(subBytes(myTarget, start, end));
-                value1 = value1 + f(myFrequencer.frequency());
-		// it should  -->   value1 = value1 + f(myFrequencer.subByteFrequency(start, end)
-		// note that subByteFrequency is not work for B211303 version.
+		int freq = myFrequencer.frequency();
+		if(freq == 0) break;
+		if(freq < 0) return (double) 0.0;
+		value1 = value1 + f(freq);
                 start = end;
             }
             // System.out.println(" "+ value1);
