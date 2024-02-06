@@ -105,8 +105,8 @@ public void setSpace(byte []space) {
         //   suffixArray[ 2]= 0:CBA
         // のようになるべきである。
 	mergeSort(suffixArray);
-    }}
-        public void mergeSort(int[] arr) {
+    }
+        private void mergeSort(int[] arr) {
         if (arr.length <= 1)
             return;
 
