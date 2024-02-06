@@ -126,7 +126,7 @@ public void setSpace(byte []space) {
     private void merge(int[] arr, int[] left, int[] right) {
         int i = 0, j = 0, k = 0;
         while (i < left.length && j < right.length) {
-            if (suffixcompare(left[i],right[j]) == 1)
+            if (suffixCompare(left[i],right[j]) == 1)
                 arr[k++] = left[i++];
             else 
                 arr[k++] = right[j++];
