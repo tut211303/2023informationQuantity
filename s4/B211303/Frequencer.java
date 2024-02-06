@@ -262,9 +262,9 @@ private int subByteStartIndex(int start, int end) {
 	while(left  != right){
 		mid = (left + right) / 2;
 		if(targetCompare(suffixArray[mid],start,end) >= 0)
-			left = mid;
-		else
 			right = mid;
+		else
+			left = mid;
 	}return left; 
     }
 private int subByteEndIndex(int start, int end) {
