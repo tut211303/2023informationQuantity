@@ -258,7 +258,7 @@ private int subByteStartIndex(int start, int end) {
         // Assuming the suffix array is created from "Hi Ho Hi Ho",                 
         // if target_start_end is "Ho ", it will return 6.                                                            
         //                                      
-	int left = 0,right = mySpace.length;
+	int left = 0,right = mySpace.length,mid;
 	while(left  != right){
 		mid = (left + right) / 2;
 		if(targetCompare(suffixArray[mid],start,end) >= 0)
