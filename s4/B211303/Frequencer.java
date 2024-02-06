@@ -258,14 +258,15 @@ private int subByteStartIndex(int start, int end) {
         // Assuming the suffix array is created from "Hi Ho Hi Ho",                 
         // if target_start_end is "Ho ", it will return 6.                                                            
         //                                      
-	int left = 0,right = mySpace.length,mid;
-	while(right - left > 1){
-		mid = (left + right) / 2;
-		if(targetCompare(suffixArray[mid],start,end) >= 0)
-			right = mid;
-		else
-			left = mid;
-	}return right; 
+        int left = 0,right = array.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (targetCompare(suffixArray[mid],start,end) < 0) {
+                left = mid + 1;
+	    else
+                right = mid - 1; 
+        }
+	}return mid;
     }
 private int subByteEndIndex(int start, int end) {
         //suffix arrayのなかで、目的の文字列の出現しなくなる場所を求めるメソッド
@@ -294,11 +295,15 @@ private int subByteEndIndex(int start, int end) {
         // Assuming the suffix array is created from "Hi Ho Hi Ho",          
         // if target_start_end is"i", it will return 9 for "Hi Ho Hi Ho".    
         //                                                                     
-	int i;
-	for(i = mySpace.length - 1;i >= 0;i--){
-		if(targetCompare(suffixArray[i],start,end) <= 0)
-			return i + 1;
-	}return 0; 
+        int left = 0,right = array.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (targetCompare(suffixArray[mid],start,end) > 0) {
+                right = mid - 1;
+	    else
+                left = mid + 1; 
+        }
+	}return mid; 
     }
     public static void main(String[] args) {
         Frequencer frequencerObject;
