@@ -260,7 +260,7 @@ private int subByteStartIndex(int start, int end) {
         //                                      
 	int left = 0,right = mySpace.length;
 	while(left  != right){
-		mid = (left + right) / 2
+		mid = (left + right) / 2;
 		if(targetCompare(suffixArray[mid],start,end) >= 0)
 			left = mid;
 		else
