@@ -259,13 +259,12 @@ private int subByteStartIndex(int start, int end) {
         // if target_start_end is "Ho ", it will return 6.                                                            
         //                                      
 	int left = 0,right = mySpace.length,mid;
-	while(left  != right){
-		mid = (left + right) / 2;
+	while(right - left > 1){
 		if(targetCompare(suffixArray[mid],start,end) >= 0)
 			right = mid;
 		else
 			left = mid;
-	}return left; 
+	}return right; 
     }
 private int subByteEndIndex(int start, int end) {
         //suffix arrayのなかで、目的の文字列の出現しなくなる場所を求めるメソッド
