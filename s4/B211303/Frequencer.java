@@ -258,11 +258,15 @@ private int subByteStartIndex(int start, int end) {
         // Assuming the suffix array is created from "Hi Ho Hi Ho",                 
         // if target_start_end is "Ho ", it will return 6.                                                            
         //                                      
-	int i;
-	for(i = 0;i < mySpace.length;i++){
-		if(targetCompare(suffixArray[i],start,end) >= 0)
-			return i;
-	}return mySpace.length; 
+	int left = 0,right = mySpace.length;
+	while(left  != right){
+		mid = (left + right) / 2
+		if(targetCompare(suffixArray[mid],start,end) >= 0)
+			left = mid;
+		else
+			right = mid;
+	}
+	}return left; 
     }
 private int subByteEndIndex(int start, int end) {
         //suffix arrayのなかで、目的の文字列の出現しなくなる場所を求めるメソッド
