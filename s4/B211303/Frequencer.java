@@ -258,7 +258,7 @@ private int subByteStartIndex(int start, int end) {
         // Assuming the suffix array is created from "Hi Ho Hi Ho",                 
         // if target_start_end is "Ho ", it will return 6.                                                            
         //                                      
-        int left = 0,right = array.length - 1;
+        int left = 0,right = suffixArray.length - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
             if (targetCompare(suffixArray[mid],start,end) < 0)
@@ -294,7 +294,7 @@ private int subByteEndIndex(int start, int end) {
         // Assuming the suffix array is created from "Hi Ho Hi Ho",          
         // if target_start_end is"i", it will return 9 for "Hi Ho Hi Ho".    
         //                                                                     
-        int left = 0,right = array.length - 1;
+        int left = 0,right = suffixArray.length - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
             if (targetCompare(suffixArray[mid],start,end) > 0)
