@@ -104,7 +104,14 @@ public void setSpace(byte []space) {
         //   suffixArray[ 1]= 1:BA
         //   suffixArray[ 2]= 0:CBA
         // のようになるべきである。
-	mergeSort(suffixArray);
+	int i,j,baf;
+	for(i=0;i<space.length;i++)
+		for(j=i+1;j<space.length;j++){
+			if(suffixCompare(suffixArray[i],suffixArray[j]) == 1){
+				baf = suffixArray[i];
+				suffixArray[i] = suffixArray[j];
+				suffixArray[j] = baf;
+			}
     }}
     public static void mergeSort(int[] arr) {
         if (arr.length <= 1)
