@@ -265,7 +265,6 @@ private int subByteStartIndex(int start, int end) {
 			left = mid;
 		else
 			right = mid;
-	}
 	}return left; 
     }
 private int subByteEndIndex(int start, int end) {
