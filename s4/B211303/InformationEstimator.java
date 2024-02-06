@@ -98,8 +98,12 @@ public class InformationEstimator implements InformationEstimatorInterface {
                 // System.out.print("("+start+","+end+")");
                 myFrequencer.setTarget(subBytes(myTarget, start, end));
 		int freq = myFrequencer.frequency();
-		if(freq == 0) break;
-		if(freq < 0) return (double) 0.0;
+		if(freq == 0){ 
+			value1 = Double.MAX_VALUE;
+			break;
+		}
+		if(freq < 0) 
+			return (double) 0.0;
 		value1 = value1 + f(freq);
                 start = end;
             }
