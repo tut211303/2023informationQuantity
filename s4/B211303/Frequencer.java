@@ -261,11 +261,10 @@ private int subByteStartIndex(int start, int end) {
         int left = 0,right = array.length - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            if (targetCompare(suffixArray[mid],start,end) < 0) {
+            if (targetCompare(suffixArray[mid],start,end) < 0)
                 left = mid + 1;
 	    else
                 right = mid - 1; 
-        }
 	}return mid;
     }
 private int subByteEndIndex(int start, int end) {
@@ -298,11 +297,10 @@ private int subByteEndIndex(int start, int end) {
         int left = 0,right = array.length - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            if (targetCompare(suffixArray[mid],start,end) > 0) {
+            if (targetCompare(suffixArray[mid],start,end) > 0)
                 right = mid - 1;
 	    else
                 left = mid + 1; 
-        }
 	}return mid; 
     }
     public static void main(String[] args) {
